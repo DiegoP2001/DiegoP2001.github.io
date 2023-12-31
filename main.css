@@ -166,3 +166,13 @@ form textarea{
 	animation-play-state: paused;
 }
 
+#musica{
+    margin-top: 4%;
+    border: none;
+    padding: 10px;
+    background-color: #ff4081;
+    border-radius: 5px;
+    font-family: Satisfy;
+    font-weight: 500;
+    font-size: 12pt;
+}
