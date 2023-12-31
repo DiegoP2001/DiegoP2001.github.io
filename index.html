@@ -1,5 +1,115 @@
-<script>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./main.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Satisfy"
+    />
+    <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Great+Vibes"">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <title>Invitacion Boda</title>
+    <script>
+      // esta funcion comprueba si un elemento esta visible en pantalla
+      function isVisible(elm) {
+        var rect = elm.getBoundingClientRect();
+        var viewHeight = Math.max(
+          document.documentElement.clientHeight,
+          window.innerHeight
+        );
+        return !(rect.bottom < 0 || rect.top - viewHeight >= 0);
+      }
 
-    document.write("<h1>Hello World!</h1>");
-    
-</script>
+      // cuando se carga la página...
+      window.addEventListener("DOMContentLoaded", (ev0) => {
+        // asignamos un evento scroll...
+        window.addEventListener("scroll", (ev1) => {
+          // y a todos los elementos con la clase paused...
+          document.querySelectorAll(".paused").forEach((elm) => {
+            if (isVisible(elm))
+              // que sean visibles...
+              elm.classList.remove("paused"); // les quitamos la clase paused
+          });
+        });
+      });
+    </script>
+    <!--@uthor Diego Piedra-->
+  </head>
+  <body>
+    <div id="landing">
+      <video autoplay loop muted playsinline>
+        <source src="./assets/boat_-_9533 (1080p).mp4" type="video/mp4" />
+      </video>
+      <h1>Querido/a amigo/a</h1>
+      <p>Te invitamos a nuestra boda</p>
+      <div class="title">
+        <h1 class="nombre">Yoe</h1>
+        <h1 id="ampersan">y</h1>
+        <h1 class="nombre">Rosy</h1>
+      </div>
+    </div>
+    <div id="historia" class="paused">
+      <p id="intro" class="anim-right">
+        Hemos decidido echar nuestra nave al mar y queremos compartir contigo
+        este momento, así que te esperamos para festejar juntos.
+      </p>
+    </div>
+    <div class="paused">
+      <p id="dev" class="anim-left">
+        Por eso te pedimos que nos compartas que <strong>canción</strong> te
+        gustaría escuchar con nosotros ese día. Y que nos regales una
+        <strong>frase o mensaje</strong>, será hermoso conservar un recuerdo de
+        tu valiosa compañía, en un día tan especial para nosotros.
+      </p>
+    </div>
+      <div id="formulario" class="paused">
+        <form
+          action="https://formsubmit.co/di.piedra@aulanz.net"
+          method="POST"
+          class="anim-right"
+        >
+          <input
+            type="hidden"
+            name="_next"
+            value="http://ordenar.atwebpages.com/gracias.html"
+          />
+          <input
+            type="hidden"
+            name="_subject"
+            value="Confirmación de Invitación"
+          />
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="hidden" name="_template" value="table" />
+          <label for="Nombre">Nombre: </label>
+          <input type="text" name="Nombre" placeholder="Ingresa tu nombre..." required/>
+          <label for="Cancion">Canción: </label>
+          <input
+            id="inp_song"
+            name="Cancion"
+            type="text"
+            placeholder="Nombre de la canción..."
+            required
+          />
+          <label for="Frase">Mensaje: </label>
+          <textarea
+            name="Frase"
+            id="txt_area"
+            cols="30"
+            rows="10"
+            placeholder="Regalanos unas palabras para recordar en este hermoso momento..."
+          ></textarea>
+          <button type="submit">Enviar</button>
+        </form>
+      </div>
+      <div class="paused">
+        <h1 id="despedida" class="anim-left">¡Te Esperamos!</h1>
+      </div>
+    </div>
+  </body>
+</html>
