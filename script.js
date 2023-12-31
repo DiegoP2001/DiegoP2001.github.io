@@ -11,6 +11,9 @@ function reproduce_music(){
 
     var button = document.getElementById('musica')
     button.classList.remove('animate__infinite')
+
+    var historiaSection = document.querySelector('#historia');
+        historiaSection.scrollIntoView({ behavior: 'smooth' });
 }
 
 
